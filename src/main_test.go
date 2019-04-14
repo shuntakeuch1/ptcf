@@ -2,13 +2,16 @@ package main
 
 import (
     "testing"
+    "flag"
 )
 
 func TestGetFile(t *testing.T) {
-    expected := "Hello World"
+    expected := "test.puml"
+    flag.CommandLine.Set("f", "test.puml")
+    
     actual := getFile()
     if expected != actual {
-        t.Error("No actual main")
+        t.Error(actual)
     }
 }
 

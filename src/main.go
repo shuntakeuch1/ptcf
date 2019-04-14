@@ -1,22 +1,16 @@
 package main
 
 import (
-    // "fmt"
-    // "flag"
+    "fmt"
+    "flag"
 )
-
-// func div(a, b int) (int, int){
-//     q := a / b
-//     r := a % b
-//     return q,r
-// }
-
+var (
+    f = flag.String("f", "example.puml", "string flag")
+)
 func getFile() string {
     // 該当のpumlを受け取る
-    // flag.Parse()
-    // args := flag.Args()
-    // fmt.Println("Hello World")
-    return "Hello World"
+    flag.Parse()
+    return *f
 }
 
 func checkLanguage() bool {
@@ -38,5 +32,5 @@ func main(){
     // 終了コードをいれる
     // q,r := div(19, 7)
     // fmt.Printf("商=%d 剰余=%d\n", q,r)
-    println(getFile())
+    fmt.Println(getFile())
 }
