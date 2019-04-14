@@ -1,0 +1,79 @@
+@startuml{example.png}
+title example
+
+package app.Controllers {
+
+class BlogController {
+}
+class UserController {
+}
+}
+'--- PACKAGE END. app.Controllers
+
+package app.Services {
+
+class BlogService {
+}
+
+class UserService {
+}
+
+}
+'--- PACKAGE END. app.Services
+
+note as note01
+    this is controller
+    next service
+end note
+
+app.Controllers .- note01
+note01 .> app.Services
+BlogController -> BlogService
+UserController -> UserService
+
+package app.Repositories {
+
+class BlogRepository {
+}
+
+class UserRepository {
+}
+
+}
+
+note as note02
+        repository hasmany model
+end note
+
+app.Services .- note02
+note02 .> app.Repositories
+BlogService -> BlogRepository
+UserService -> UserRepository
+
+package app.Models {
+
+class Blog {
+
+}
+
+class Article {
+
+}
+
+class User {
+
+}
+}
+
+note as note03
+Model is Table dao
+end note
+
+'=== リポジトリとモデルの関連'
+app.Repositories .- note03
+note03 .> app.Models
+BlogRepository -> Blog
+BlogRepository -> Article
+UserRepository -> User
+
+@enduml
