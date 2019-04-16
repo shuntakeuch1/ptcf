@@ -13,7 +13,6 @@ var (
     format = flag.String("format", "default", "format flag")
 )
 func getFile() string {
-    // 該当のpumlを受け取る
     return *f
 }
 
@@ -93,6 +92,7 @@ func makeFile(class_map map[string][]string,lang string){
         fmt.Println("directory create ",p)
 
         for _, m := range clasies {
+            // 初期フォーマット + ファイル名でファイルに記述
             filename := p + "/" + m + "." + lang
             _,err := os.Create(filename)
             if err != nil {
@@ -112,9 +112,7 @@ func main(){
     class_map := readFile(file)
 
     makeFile(class_map,*l)
-    // 初期フォーマット + ファイル名でファイルに記述
 
-    // 終了コードをいれる
-    // q,r := div(19, 7)
-    // fmt.Printf("商=%d 剰余=%d\n", q,r)
+    os.Exit(0)
 }
+
