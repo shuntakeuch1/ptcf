@@ -1,5 +1,4 @@
-## ptcf
-This tool is PlantUML To Class Files
+## This tool is PlantUML To Class Files
 
 don't quick start
 <!-- ``` -->

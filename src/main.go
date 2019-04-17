@@ -18,8 +18,11 @@ func getFile() string {
 
 func checkLanguage(lang string) bool {
     // 第2引数を受け取って対応言語か判定
-    if lang == "php" {
-        return true
+    languages := []string{"php","go","ruby"}
+    for _,l := range languages {
+        if lang == l {
+            return true
+        }
     }
     return false
 }

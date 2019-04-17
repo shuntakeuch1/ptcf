@@ -17,10 +17,7 @@ func TestGetFile(t *testing.T) {
 }
 
 func TestCheckLanguage(t *testing.T) {
-    // flag.CommandLine.Set("f", "ruby")
-    
-    // actual := checkLanguage("ruby")
-    actual := checkLanguage("php")
+    actual := checkLanguage("go")
     if (!actual) {
         t.Error("No actual checkLanguage " + fmt.Sprint(actual))
     }
